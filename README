@@ -1,0 +1,11 @@
+Different implementations of matmul, I pretty much I wanted to see how to work with SIMD in Go.
+
+200×200 int32 matrices — Apple M1 Pro:
+
+Implementation                 Time/op     ops/s    Speedup
+Simple                         10.14 ms      98.6     1.0x
+Transposed                      4.96 ms     201.5     2.0x
+Transposed + SIMD               2.62 ms     381.4     3.9x
+Parallel                        1.57 ms     636.8     6.5x
+Parallel + transposed           1.14 ms     874.7     8.9x
+Parallel + transposed + SIMD    0.605 ms   1,654.0    16.8x
